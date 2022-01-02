@@ -13,7 +13,6 @@ class FeatureExtractor(nn.Module):
         self.activations = {}
         self.names = {}
         self.layer_numbers = 0
-        idx = 0
         self.register_hook(model)
 
     def register_hook(self,model):
@@ -34,15 +33,3 @@ class FeatureExtractor(nn.Module):
     def forward(self, x):
         return self.model(x)
         
-# model = torchvision.models.densenet121(pretrained= True)
-
-train_set,test_set = dataset.IMAGENET(normalize=False)
-test_loader = torch.utils.data.DataLoader(test_set,batch_size = 1,shuffle = False)
-myIter = iter(test_loader)
-x,y = next(myIter)
-model = torchvision.models.resnet18(pretrained= True)
-features = FeatureExtractor(model)
-
-
-z = features(x)
-pdb.set_trace()
