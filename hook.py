@@ -22,7 +22,6 @@ class FeatureExtractor(nn.Module):
                 layer.register_forward_hook(self.get_activation(idx))
                 self.names[idx] = name
                 idx += 1
-
         self.layer_numbers = idx
 
     def get_activation(self,name):
