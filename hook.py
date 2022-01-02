@@ -1,6 +1,8 @@
 import torch
 import torchvision
 from torch import nn
+import dataset
+import pdb
 
 class FeatureExtractor(nn.Module):
     def __init__(self, model):
@@ -14,7 +16,7 @@ class FeatureExtractor(nn.Module):
             features.layer_numbers     # the number of total registered layers.
             features.names[0]          # ex) Conv2d, ReLU, BatchNorm2d.
         '''
-        super().__init__()
+        super(FeatureExtractor,self).__init__()
         self.model = model
         self.activations = {} 
         self.names = {}
@@ -33,7 +35,7 @@ class FeatureExtractor(nn.Module):
     def get_activation(self,idx):
         def hook_fn(module,input,output):
             self.activations[idx] = output
-            
+
         return hook_fn
 
     def forward(self, x):
