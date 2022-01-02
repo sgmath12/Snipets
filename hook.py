@@ -1,16 +1,22 @@
 import torch
-from torch.nn.modules.batchnorm import BatchNorm2d
 import torchvision
-from torch import nn, Tensor
-import dataset
-import pdb
-
+from torch import nn
 
 class FeatureExtractor(nn.Module):
     def __init__(self, model):
+        '''
+        model : torch model
+
+        ex)
+            features = FeatureExtractor(vgg16)
+            z = features(x)            # you should forward input x to get features.
+            features.activations[0]    # torch tensor [batch size, channel, height, width].      
+            features.layer_numbers     # number of registerd layers.
+            features.names[0]          # ex) Conv2d,ReLU,BatchNorm.
+        '''
         super().__init__()
         self.model = model
-        self.activations = {}
+        self.activations = {} 
         self.names = {}
         self.layer_numbers = 0
         self.register_hook(model)
@@ -18,17 +24,19 @@ class FeatureExtractor(nn.Module):
     def register_hook(self,model):
         idx = 0
         for name,layer in model.named_modules():
-            if isinstance(layer, nn.Conv2d) or isinstance(layer,BatchNorm2d) or isinstance(layer,nn.ReLU):
+            if isinstance(layer, nn.Conv2d) or isinstance(layer,nn.ReLU) or isinstance(layer,nn.BatchNorm2d) :
                 layer.register_forward_hook(self.get_activation(idx))
-                self.names[idx] = name
+                self.names[idx] = layer
                 idx += 1
         self.layer_numbers = idx
 
-    def get_activation(self,name):
+    def get_activation(self,idx):
         def hook_fn(module,input,output):
-            self.activations[name] = output
+            self.activations[idx] = output
         return hook_fn
 
     def forward(self, x):
         return self.model(x)
         
+
+# 
