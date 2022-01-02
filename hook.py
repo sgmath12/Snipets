@@ -1,8 +1,4 @@
-import torch
-import torchvision
 from torch import nn
-import dataset
-import pdb
 
 class FeatureExtractor(nn.Module):
     def __init__(self, model):
