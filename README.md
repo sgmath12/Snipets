@@ -1,9 +1,11 @@
-# Extract Intermediate Feature maps of pyTorch models
+# Pytorch Code Snipes
 
-## Dates
+## Feature Extractor
+
+### Dates
 22/01/27
 
-## Intro
+### Intro
 
  - You can select the type of layer you want. For instance, If you want to extract the intermediate feature after the **relu** activation, modify as follows.
  
