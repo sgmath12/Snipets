@@ -1,4 +1,4 @@
-# Extract Intermediate Feature of pyTorch models
+# Extract Intermediate Feature maps of pyTorch models
 
 ## Dates
 22/01/27
