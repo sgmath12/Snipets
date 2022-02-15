@@ -7,8 +7,8 @@ x_axis_end = 5.25
 y_axis_start = -0.05
 y_axis_end = 1.05
 
-x_ticks = (0,5,1)
-y_ticks = (0,1,0.5)
+x_ticks = (0,6,1)
+y_ticks = (0,1.1,0.5)
 
 title = Vgg16
 x_axis_name = Layer index

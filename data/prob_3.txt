@@ -8,8 +8,8 @@ y_axis_start = -0.05
 y_axis_end = 1.05
 
 
-x_ticks = (0,7,1)
-y_ticks = (0,1,0.5)
+x_ticks = (0,8,1)
+y_ticks = (0,1.1,0.5)
 
 title = DN121
 x_axis_name = Layer index
