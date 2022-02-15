@@ -2,16 +2,10 @@
 
 ## Dataset
 
-### Dataes
-22/01/27
-
 ### Intro
  - This code made it easy to retrieve the data set before entering the **dataloader** of the pytorch model.
 
 ## Feature Extractor
-
-### Dates
-22/01/27
 
 ### Intro
  - It is a code that extracts the intermediate feature of the pytorch model. 
