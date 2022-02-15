@@ -5,7 +5,7 @@
 
  - This code made it easy to retrieve the data set before entering the **dataloader** of the pytorch model.
 
-## Feature Extractor
+## Feature Extractor (hook.py)
 
 
  - It is a code that extracts the intermediate feature of the pytorch model. 
