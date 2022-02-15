@@ -1,0 +1,46 @@
+x = [1,7,7]
+y_res18 =    [25.5, 15.6, 12.6, 6.80, 9.00, 9.70, 22.0]
+y_incv3 =    [54.6, 45.0, 43.6, 30.3, 37.7, 40.1, 54.0]
+y_DN121 =    [0.0, 0.1, 0.2, 0, 0, 0, 0]
+y_vgg16 =    [40.0, 27.2, 23.0, 13.2, 16.3, 17.8, 32.4]
+y_res101 =   [41.5, 29.1, 22.9, 11.8, 15.2, 16.8, 33.1]
+y_incv4 =    [56.4, 44.0, 43.5, 30.6, 38.3, 41.0, 55.8]
+y_incresv2 = [62.5, 53.4, 52.7, 46.6, 53.9, 56.3, 65.9]
+y_DN161 =    [30.0, 22.4, 16.6, 5.5, 6.1, 6.4, 17.6]
+y_mob_v2 =   [34.6, 23.4, 18.7, 10.5, 14.8, 16.0, 30.4]
+
+
+x_axis_start = 0.75
+x_axis_end = 7.25
+y_axis_start = -5
+
+title = DN121
+x_axis_name = layer index
+y_axis_name = Accuracy (%)
+x_axis_font_size = 10
+y_axis_font_size = 10
+
+label_name1 = Res18
+label_name2 = Inv_v3
+label_name3 = DN121
+label_name4 = Vgg16
+label_name5 = Res101
+label_name6 = Inc_v4
+label_name7 = IncRes_v2
+label_name8 = DN161
+label_name9 = mov_v2
+
+
+marker_shape1 = o
+marker_shape2 = v
+marker_shape3 = <
+marker_shape4 = >
+marker_shape5 = d
+marker_shape6 = s
+marker_shape7 = p
+marker_shape8 = *
+marker_shape9 = h
+
+marker_size = 5
+
+line_width = 1

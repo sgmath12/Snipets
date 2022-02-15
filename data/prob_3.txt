@@ -1,0 +1,22 @@
+x =          [1, 7,7]
+y_res18 =    [0.6520, 0.5642, 0.5205, 0.4464, 0.4942, 0.7539, 0.8588]
+
+
+x_axis_start = 0.75
+x_axis_end = 7.25
+y_axis_start = -0.05
+y_axis_end = 1.05
+
+title = DN121
+x_axis_name = Layer index
+y_axis_name = Probability of Top-1 class
+x_axis_font_size = 10
+y_axis_font_size = 10
+
+
+
+marker_shape1 = o
+
+marker_size = 5
+
+line_width = 1

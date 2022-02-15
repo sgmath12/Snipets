@@ -1,0 +1,22 @@
+x =          [1, 5,5]
+y_res18 =    [0.8249, 0.7361, 0.6522, 0.7610, 0.9303]
+
+
+x_axis_start = 0.75
+x_axis_end = 5.25
+y_axis_start = -0.05
+y_axis_end = 1.05
+
+title = Vgg16
+x_axis_name = Layer index
+y_axis_name = Probability of Top-1 class
+x_axis_font_size = 10
+y_axis_font_size = 10
+
+
+
+marker_shape1 = o
+
+marker_size = 5
+
+line_width = 1

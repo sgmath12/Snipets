@@ -87,8 +87,8 @@ class Dod_data():
         self.X = X
         self.Y = np.array(Y)
 
-# data_names = ["./data_1.txt","./data_2.txt","./data_3.txt","./data_4.txt"]
-data_names = ["./prob_1.txt","./prob_2.txt","./prob_3.txt","./prob_4.txt"]
+# data_names = ["./data/data_1.txt","./data/data_2.txt","./data/data_3.txt","./data/data_4.txt"]
+data_names = ["./data/prob_1.txt","./data/prob_2.txt","./data/prob_3.txt","./data/prob_4.txt"]
 
 data_1 = Dod_data(data_names[0])
 
