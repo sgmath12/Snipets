@@ -3,12 +3,7 @@ import numpy as np
 import scipy.stats
 import matplotlib.pyplot as plt
 import pdb
-
-def compute_pos(xticks, width, i, models):
-    index = np.arange(len(xticks))
-    n = len(models)
-    correction = i-0.5*(n-1)
-    return index + width*correction
+import argparse
 
 class Dod_data():
     def __init__(self,file_path):
@@ -96,38 +91,61 @@ class Dod_data():
         self.X = X
         self.Y = np.array(Y)
 
-data_names = ["./data/data_1.txt","./data/data_2.txt","./data/data_3.txt","./data/data_4.txt"]
-# data_names = ["./data/prob_1.txt","./data/prob_2.txt","./data/prob_3.txt","./data/prob_4.txt"]
+def main(args):
 
-data_1 = Dod_data(data_names[0])
+    # data_names = ["./data/data_1.txt"]
+    data_names = ["./data/data_1.txt","./data/data_2.txt","./data/data_3.txt","./data/data_4.txt"]
+    # data_names = ["./data/prob_1.txt","./data/prob_2.txt","./data/prob_3.txt","./data/prob_4.txt"]
 
-fig, (a1,a2,a3,a4) = plt.subplots(1,len(data_names),figsize=(15,3.5))
+    data_1 = Dod_data(data_names[0])
+    fig_size_x = 3.5
+    fig_size_y = fig_size_x * len(data_names)
+    fig, axes = plt.subplots(1,len(data_names),figsize=(fig_size_y,fig_size_x))
 
-subfigures = (a1, a2, a3, a4)
+    # subfigures = (a1, a2, a3, a4)
+    plt.subplots_adjust(bottom = 0.3, wspace = 0.4)
+    # plt.tight_layout()
+    # plt.constraint_layout()
 
-plt.subplots_adjust(bottom = 0.3, wspace = 0.4)
-# plt.tight_layout()
-# plt.constraint_layout()
+    for idx, ax in enumerate(fig.axes):
+        data = Dod_data(data_names[idx])
+        ax.set_xticks(np.arange(min(data_1.X), max(data.X)+1, 1.0))
+        ax.set_xticks(data.xticks)
+        ax.set_yticks(data.yticks)
+        # ax.set_yticks(np.arange(0, 1.1, 0.25))
+        ax.set_xlim(data.x_axis_start,data.x_axis_end)
+        ax.set_ylim(data.y_axis_start,data.y_axis_end)
+        ax.set_xlabel(data.x_axis_name, fontsize = data.x_axis_font_size)
+        ax.set_ylabel(data.y_axis_name, fontsize = data.y_axis_font_size) 
+        ax.title.set_text(data.title)
 
-for idx, ax in enumerate(subfigures):
-    data = Dod_data(data_names[idx])
-    ax.set_xticks(np.arange(min(data_1.X), max(data.X)+1, 1.0))
-    ax.set_xticks(data.xticks)
-    ax.set_yticks(data.yticks)
-    # ax.set_yticks(np.arange(0, 1.1, 0.25))
-    ax.set_xlim(data.x_axis_start,data.x_axis_end)
-    ax.set_ylim(data.y_axis_start,data.y_axis_end)
-    ax.set_xlabel(data.x_axis_name, fontsize = data.x_axis_font_size)
-    ax.set_ylabel(data.y_axis_name, fontsize = data.y_axis_font_size) 
-    ax.title.set_text(data.title)
+        for idx,y in enumerate(data.Y):
+            if args.common_legend == 'True':
+                ax.plot(data.X,y, lw = data.line_width, marker = data.markers[idx], ms = data.marker_size)
+            else : 
+                ax.plot(data.X,y,label = data.label_names[idx], lw = data.line_width, marker = data.markers[idx], ms = data.marker_size)
+                ax.legend(loc = "upper right")
 
-    for idx,y in enumerate(data.Y):
-        ax.plot(data.X,y, lw = data.line_width, marker = data.markers[idx], ms = data.marker_size)
+    if args.common_legend == 'True':
+        fig.legend(labels = data.label_names,loc = (0.25, 0.02), ncol = 5)
+
+    # plt.legend()
+    # plt.show()
+    plt.savefig(args.fig_name,bbox_inches='tight')
+    plt.close()
 
 
-fig.legend(labels = data.label_names,loc = (0.25, 0.02), ncol = 5)
 
-# plt.legend()
-# plt.show()
-plt.savefig("prob_test.png",bbox_inches='tight')
-plt.close()
+
+def argument_parsing():
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument("--fig_name", default="result.png")
+    parser.add_argument("--common_legend", default="False")
+
+
+    return parser
+
+if __name__ == "__main__":
+    args = argument_parsing().parse_args()
+    main(args)
