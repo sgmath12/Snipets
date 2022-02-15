@@ -97,22 +97,17 @@ def main(args):
     data_names = ["./data/data_1.txt","./data/data_2.txt","./data/data_3.txt","./data/data_4.txt"]
     # data_names = ["./data/prob_1.txt","./data/prob_2.txt","./data/prob_3.txt","./data/prob_4.txt"]
 
-    data_1 = Dod_data(data_names[0])
-    fig_size_x = 3.5
+    fig_size_x = int(args.fig_size_x)
+    # fig_size_y = int(args.fig_size_y)
     fig_size_y = fig_size_x * len(data_names)
     fig, axes = plt.subplots(1,len(data_names),figsize=(fig_size_y,fig_size_x))
 
-    # subfigures = (a1, a2, a3, a4)
     plt.subplots_adjust(bottom = 0.3, wspace = 0.4)
-    # plt.tight_layout()
-    # plt.constraint_layout()
 
     for idx, ax in enumerate(fig.axes):
         data = Dod_data(data_names[idx])
-        ax.set_xticks(np.arange(min(data_1.X), max(data.X)+1, 1.0))
         ax.set_xticks(data.xticks)
         ax.set_yticks(data.yticks)
-        # ax.set_yticks(np.arange(0, 1.1, 0.25))
         ax.set_xlim(data.x_axis_start,data.x_axis_end)
         ax.set_ylim(data.y_axis_start,data.y_axis_end)
         ax.set_xlabel(data.x_axis_name, fontsize = data.x_axis_font_size)
@@ -142,6 +137,8 @@ def argument_parsing():
 
     parser.add_argument("--fig_name", default="result.png")
     parser.add_argument("--common_legend", default="False")
+    parser.add_argument("--fig_size_x", default="3")
+    # parser.add_argument("--fig_size_y", default="3")
 
 
     return parser
