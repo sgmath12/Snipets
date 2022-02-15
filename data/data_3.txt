@@ -14,8 +14,12 @@ x_axis_start = 0.75
 x_axis_end = 7.25
 y_axis_start = -5
 
+
+x_ticks = (0,8,1)
+y_ticks = (0,101,25)
+
 title = DN121
-x_axis_name = layer index
+x_axis_name = Layer index
 y_axis_name = Accuracy (%)
 x_axis_font_size = 10
 y_axis_font_size = 10

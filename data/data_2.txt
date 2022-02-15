@@ -15,7 +15,10 @@ x_axis_end = 8.25
 y_axis_start = -5
 title = Inv_v3
 
-x_axis_name = layer index
+x_ticks = (0,9,1)
+y_ticks = (0,101,25)
+
+x_axis_name = Layer index
 y_axis_name = Accuracy (%)
 x_axis_font_size = 10
 y_axis_font_size = 10

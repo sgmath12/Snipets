@@ -7,6 +7,9 @@ x_axis_end = 8.25
 y_axis_start = -0.05
 y_axis_end = 1.05
 
+x_ticks = (0,8,1)
+y_ticks = (0,1,0.5)
+
 title = IncV3
 x_axis_name = Layer index
 y_axis_name = Probability of Top-1 class
