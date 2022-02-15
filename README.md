@@ -30,4 +30,4 @@ python dod_line_subgraph.py
 - If `--common_legend True`, then it will creates subgraphs with common legned as follows. 
 ![prob_test](https://user-images.githubusercontent.com/21999383/154065375-8ad9af56-bdec-428c-b633-f78228bf8844.png)
 - If `--common_legend False`, then it will creates subgraph wihh normal legend as follows.
-![Figure_1](https://user-images.githubusercontent.com/21999383/154065384-91022f29-be45-47bc-b067-e8d1056ee2d7.png)
+![Figure_1](https://user-images.githubusercontent.com/21999383/154065384-91022f29-be45-47bc-b067-e8d1056ee2d7.png)){: width="50" height="50"}
