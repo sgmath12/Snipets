@@ -20,8 +20,7 @@
 
 ## Dod_line_subfigure
 
-- It's a code for drawing figures easily using matplotlib.
-- You will draw a dot-line as shown in the following picture.
+- It's a code for drawing figures easily using matplotlib. You will draw a dot-line as shown in the following picture.
 - You can enter data in the text file, and for more information on how to operate, see the code in `Dod_data class` and /data, then you can understand how to use.
 - Enter the data and run it as follows.
 ```
