@@ -1,6 +1,6 @@
 # Pytorch Code Snipets
 
-## Dataset
+## dataset.py
 
 
  - This code made it easy to retrieve the data set before entering the *dataloader* of the pytorch model.
@@ -18,7 +18,7 @@
      idx += 1
  ```
 
-## Dod_line_subfigure
+## dod_line_subfigure.py
 
 - It's a code for drawing figures easily using matplotlib. You will draw a dot-line as shown in the following picture.
 - You can enter data in the text file, and for more information on how to operate, see the code line of `Dod_data class` and /data, then you can understand how to use.
