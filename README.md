@@ -1,4 +1,4 @@
-# Pytorch Code Snipes
+# Pytorch Code Snipets
 
 ## Dataset
 
