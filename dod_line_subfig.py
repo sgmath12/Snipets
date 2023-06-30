@@ -93,9 +93,11 @@ class Dod_data():
 
 def main(args):
 
-    # data_names = ["./data/data_1.txt"]
-    data_names = ["./data/data_1.txt","./data/data_2.txt","./data/data_3.txt","./data/data_4.txt"]
-    # data_names = ["./data/prob_1.txt","./data/prob_2.txt","./data/prob_3.txt","./data/prob_4.txt"]
+    plt.style.use(['seaborn-darkgrid'])
+
+    data_names = ["./data/curvature.txt","./data/curvature.txt"]
+    # data_names = ["./data/data_1.txt","./data/data_2.txt","./data/data_3.txt","./data/data_4.txt"]
+   
 
     fig_size_x = int(args.fig_size_x)
     # fig_size_y = int(args.fig_size_y)
@@ -126,7 +128,7 @@ def main(args):
 
     # plt.legend()
     # plt.show()
-    plt.savefig(args.fig_name,bbox_inches='tight')
+    plt.savefig("./result_figure/" + args.fig_name,bbox_inches='tight')
     plt.close()
 
 
